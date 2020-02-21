@@ -1,0 +1,31 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+
+mat-card {
+    width: 300px;
+    margin: 30px;
+    text-align: center;
+    cursor: pointer;
+
+    mat-card-header {
+        display: inline;
+        text-align: center;
+    }
+
+    &:hover {
+        box-shadow: 3px 3px 16px -2px #DD2C00;
+    }
+
+    img {
+        width: 200px;
+        min-width: 200px;
+        height: 250px;
+        max-height: 250px;
+    }
+}

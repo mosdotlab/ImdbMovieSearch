@@ -1,0 +1,126 @@
+<div class="row"
+    *ngIf="movie?.imdbID">
+
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                {{movie?.Title?.substring(0, 100)}}
+            </mat-card-title>
+            <mat-card-subtitle> {{movie?.Year}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image
+            [src]="movie?.Poster" />
+
+        <mat-card-content>
+            imdbID {{movie?.imdbID}}
+        </mat-card-content>
+
+    </mat-card>
+
+    <mat-card>
+        <table class="movie-table">
+            <tr>
+                <td>imdbRating</td>
+                <td>{{movie?.imdbRating}}</td>
+            </tr>
+            <tr>
+                <td>Rated</td>
+                <td>{{movie?.Rated}}</td>
+            </tr>
+            <tr>
+                <td>Released</td>
+                <td>{{movie?.Released}}</td>
+            </tr>
+            <tr>
+                <td>Runtime</td>
+                <td>{{movie?.Runtime}}</td>
+            </tr>
+            <tr>
+                <td>Genre</td>
+                <td>{{movie?.Genre}}</td>
+            </tr>
+            <tr>
+                <td>Director</td>
+                <td>{{movie?.Director}}</td>
+            </tr>
+            <tr>
+                <td>Writer</td>
+                <td>{{movie?.Writer}}</td>
+            </tr>
+            <tr>
+                <td>Plot</td>
+                <td>{{movie?.Plot}}</td>
+            </tr>
+        </table>
+    </mat-card>
+
+    <mat-card>
+        <table class="movie-table">
+            <tr>
+                <td>Actors</td>
+                <td>{{movie?.Actors}}</td>
+            </tr>
+            <tr>
+                <td>Language</td>
+                <td>{{movie?.Language}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{movie?.Country}}</td>
+            </tr>
+            <tr>
+                <td>Awards</td>
+                <td>{{movie?.Awards}}</td>
+            </tr>
+            <tr>
+                <td>Metascore</td>
+                <td>{{movie?.Metascore}}</td>
+            </tr>
+            <tr>
+                <td>imdbVotes</td>
+                <td>{{movie?.imdbVotes}}</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>{{movie?.Type}}</td>
+            </tr>
+            <tr>
+                <td>DVD</td>
+                <td>{{movie?.DVD}}</td>
+            </tr>
+            <tr>
+                <td>BoxOffice</td>
+                <td>{{movie?.BoxOffice}}</td>
+            </tr>
+            <tr>
+                <td>Production</td>
+                <td>{{movie?.Production}}</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td>{{movie?.Website}}</td>
+            </tr>
+            <tr>
+                <td>Response</td>
+                <td>{{movie?.Response}}</td>
+            </tr>
+        </table>
+    </mat-card>
+</div>
+
+<button mat-fab
+    class="fav-button"
+    *ngIf="!isFavorite"
+    color="primary"
+    (click)="addToFavorite(movie)">
+    <mat-icon>favorite</mat-icon>
+</button>
+
+<button mat-fab
+    class="fav-button"
+    *ngIf="isFavorite"
+    color="accent"
+    (click)="removeFromFavorite(movie.imdbID)">
+    <mat-icon>delete_forever</mat-icon>
+</button>

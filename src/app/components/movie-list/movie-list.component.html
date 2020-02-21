@@ -1,0 +1,21 @@
+<div class="row">
+    <mat-card *ngFor="let movie of movies$ | async"
+        (click)="_router.navigate(['/movie-details',movie?.imdbID])">
+
+        <mat-card-header>
+            <mat-card-title>
+                {{movie?.Title?.substring(0, 100)}}
+            </mat-card-title>
+            <mat-card-subtitle> {{movie?.Type}} {{movie?.Year}}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image
+            *ngIf="movie?.Poster !=='N/A'"
+            [src]="movie?.Poster" />
+
+        <mat-card-content>
+            imdbID {{movie?.imdbID}}
+        </mat-card-content>
+
+    </mat-card>
+</div>

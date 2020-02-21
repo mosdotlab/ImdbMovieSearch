@@ -1,0 +1,39 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+mat-card {
+    width: 350px;
+    margin: 30px;
+    text-align: center;
+
+    mat-card-header {
+        display: inline;
+        text-align: center;
+    }
+}
+
+.movie-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td {
+        padding: 5px;
+        border: 1px solid #DD2C00;
+    }
+
+    tr:nth-child(even) {
+        background-color: #616161;
+    }
+}
+
+.fav-button {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+}
